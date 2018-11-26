@@ -56,42 +56,16 @@ secret_key                <not set>             None    None
 
 * OK, done. Move to next step.
 
-#### [1-3] Create an Instance Profile with the AWS CLI ###
-
-### Working on your LOCAL MACHINE terminal or your EC2
+#### [1-3] Create an Instance Profile in AWS Console ###
 
 **NOTE:** Before you run below command, **make sure you have enough privileges.** (such as `AdministratorAccess` policy).
 
-* You may have `AdministratorAccess` privileged **AWS CLI environment** such as your LOCAL MACHINE or your EC2.
+* You may have `AdministratorAccess` privileged aws account or IAM account.
+* In AWS Console, move to IAM service. 
+* Select "Policy" menu in the left and click "Create Policy" button.
+* Click "JSON" tab in the editor. 
+* Copy and paste below JSON.
 
-  * Download `generate_instance_profile.sh`.
-
-```console
-wget https://raw.githubusercontent.com/aws-kr-tnc/moving-to-serverless-techpump/master/resources/generate_instance_profile.sh
-```
-* If you want, **review** the `generate_instance_profile.sh` file.
-```console
-wget https://raw.githubusercontent.com/aws-kr-tnc/moving-to-serverless-techpump/master/resources/workshop-cloud9-instance-profile-role-trust.json
-wget https://raw.githubusercontent.com/aws-kr-tnc/moving-to-serverless-techpump/master/resources/workshop-cloud9-policy.json
-
-PARN=$(aws iam create-policy --policy-name workshop-cloud9-policy --policy-document file://workshop-cloud9-policy.json --query "Policy.Arn" --output text)
-aws iam create-role --role-name workshop-cloud9-instance-profile-role --assume-role-policy-document file://workshop-cloud9-instance-profile-role-trust.json
-aws iam attach-role-policy --role-name workshop-cloud9-instance-profile-role --policy-arn $PARN
-aws iam create-instance-profile --instance-profile-name workshop-cloud9-instance-profile
-aws iam add-role-to-instance-profile --role-name workshop-cloud9-instance-profile-role --instance-profile-name workshop-cloud9-instance-profile
-```
-
- * Add `execute` permission
-```console
-chmod +x generate_instance_profile.sh
-```
-
- * **Run** script with enough privileges, such as `AdministratorAccess` policy. (**Currently, you can not run this command in Cloud9 terminal.**):
-```console
-./generate_instance_profile.sh
-```
-
-* If you want, **review** the `workshop-cloud9-policy.json` policy.
 ```json
 {
     "Version": "2012-10-17",
@@ -119,6 +93,19 @@ chmod +x generate_instance_profile.sh
 }
 
 ```
+* Click "Review Policy" in the bottom line.
+* Type "workshop-cloud9-instance-profile" in the name field and click "Create Policy" in the bottom line.
+* Ok. You made the IAM policy used in the role. 
+* Next, you will make "assume role" with the predefined policy. 
+* Click "Role" in the left menu.
+* Click "Create Role".
+* Select "AWS services" in the "Select type of trusted entity" section.
+* Select "EC2 service" in the "Choose the service that will use this role" section.
+* Click "Next Permission" button in the bottom line.
+* Search "workshop-cloud9-instance-profile" policy using filter.
+* Check the result item and click "next: Tags" button in the bottom line.
+* Click "Next: Review" button in the bottom line.
+* Type "workshop-cloud9-instance-profile-role" in the name field and click "Create Role" button in the bottom line.
 
 
 #### [1-4] Attach an Instance Profile to Cloud9 Instance with the AWS CLI
