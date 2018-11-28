@@ -110,34 +110,14 @@ secret_key                <not set>             None    None
 
 #### [1-4] Attach an Instance Profile to Cloud9 Instance with the AWS CLI
 
-* Get instance-id of Cloud9 environment, For this we need **Cloud9 environment name**. We defined it LAB 01. (**workshop-\<INITIAL\>**). 
-
-* Attach an **Instance Profile** which made previous step to Cloud9 Instance.
-
-* Replace **workshop-\<INITIAL\>** to real value.
-```console
-INSTANCE_ID=$(aws ec2 describe-instances --query "Reservations[*].Instances[*].InstanceId" --filter "Name=tag:Name, Values=aws-cloud9-workshop-<INITIAL>*" --region ap-southeast-1 --output=text)
-
-echo $INSTANCE_ID
-
-aws ec2 associate-iam-instance-profile --iam-instance-profile  Name=workshop-cloud9-instance-profile --region ap-southeast-1 --instance-id $INSTANCE_ID
-```
-* Run the following command to check the result: 
-
-```console
-aws ec2 describe-instances --query "Reservations[].Instances[].IamInstanceProfile" --instance-id $INSTANCE_ID --region ap-southeast-1
-```
-* output: 
-```
-[
-    {
-        "Arn": "arn:aws:iam::123456789012:instance-profile/workshop-cloud9-instance-profile",
-        "Id": "AIPAIFQCLU7KO6ML343DDD"
-    }
-]
-```
-* Now `workshop-cloud9-instance-profile` is attached our Cloud9 instance.
-
+* We will find Cloud9 EC2 instance in aws management console
+* Move to "EC2" service in AWS management console.
+* You can find EC2 instance which name include "aws-cloud9-...".
+* Click "Actions" button and click "instance settings".
+* Click "Attach/Replace IAM Role" menu.
+* You can find "workshop-cloud9-instance-profile-role" in the list and select it.
+* Click "Apply" button.
+* Click "Close" button.
 
 ### Back to the your Cloud9 terminal.
 
