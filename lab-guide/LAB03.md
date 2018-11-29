@@ -63,7 +63,7 @@ virtualenv --version
 ```
 * output:
 ```
-16.0.0
+16.1.0
 ```
 ```console
 virtualenv -p /usr/bin/python36 venv
