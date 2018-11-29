@@ -483,16 +483,17 @@ conf = {
 
 Is it OK? Let's move to the next TASK.
 
-**NOTE:** Click the `stop icon` to stop your application.
-  * **Close your terminal** after application stop.
-  * **Close all your opened file tab.**
-<img src=./images/stop-app.png width=500>
-
 16. Delete data in the application for the next TASK.
 * File system will be changed from **local disk** to **Amazon S3**.
 * So, if you don't delete your album article which submitted this task, then **you will see your album article without images** when you run the application on the next TASK,
 
 <img src=images/lab02-task2-delete.png width=400>
+
+**NOTE:** Click the `stop icon` to stop your application.
+  * **Close your terminal** after application stop.
+  * **Close all your opened file tab.**
+<img src=./images/stop-app.png width=500>
+
 
 
 ## TASK 2. Go to S3
