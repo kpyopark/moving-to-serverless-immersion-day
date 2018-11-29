@@ -859,6 +859,8 @@ aws ssm put-parameter --name "/cloudalbum/BASE_URL" --value "<YOUR REST API URL>
 
 
 30. Connect to your application through API Gateway. open `https://v1mehmiqsj.execute-api.ap-southeast-1.amazonaws.com/api` in your browser. 
+* If you meet "redirect_mismatch" message, you should clear redirection cache in your browser.
+  For example, in chrome, open "Development Tools" and click "Network" tab, and click "disable cache" check box.
 * If you missed API Gateway **URL**, you can use `chalice url` command.
 <img src=./images/lab02-task3-cognito-login.png width=500>
 
