@@ -185,7 +185,7 @@ In this TASK, we will introduce DynamoDB for CloudAlbum application. We also int
 
 1. Install required Python packaged:
 ```console
-sudo pip-3.6 install -r ~/environment/moving-to-serverless-techpump/LAB02/01-CloudAlbum-DDB/requirements.txt
+sudo pip-3.6 install -r ~/environment/moving-to-serverless-immersion-day/LAB02/01-CloudAlbum-DDB/requirements.txt
 ```
 
 
@@ -731,7 +731,7 @@ https://<CLOUD9_RESOURCE_ID>.vfs.cloud9.ap-southeast-1.amazonaws.com
 
 57. Install required Python packages:
 ```console
-sudo pip-3.6 install -r ~/environment/moving-to-serverless-techpump/LAB02/03-CloudAlbum-COGNITO/requirements.txt
+sudo pip-3.6 install -r ~/environment/moving-to-serverless-immersion-day/LAB02/03-CloudAlbum-COGNITO/requirements.txt
 ```
 
 58. Review 'LAB02/03.CloudAlbum-COGNITO/cloudalbum/config.py'
@@ -852,7 +852,7 @@ AWS [X-Ray](https://aws.amazon.com/xray/) helps developers analyze and debug pro
 
 64. Install required Python packages for AWS X-Ray.
 ```console
-sudo pip-3.6 install -r ~/environment/moving-to-serverless-techpump/LAB02/04-CloudAlbum-XRAY/requirements.txt
+sudo pip-3.6 install -r ~/environment/moving-to-serverless-immersion-day/LAB02/04-CloudAlbum-XRAY/requirements.txt
 ```
 
 **Download and run the AWS X-Ray daemon on your AWS Cloud9 instance.**
