@@ -185,7 +185,7 @@ In this TASK, we will introduce DynamoDB for CloudAlbum application. We also int
 
 1. Install required Python packaged:
 ```console
-sudo pip-3.6 install -r ~/environment/moving-to-serverless-techpump/LAB02/01-CloudAlbum-DDB/requirements.txt
+sudo pip-3.6 install -r ~/environment/moving-to-serverless-immersion-day/LAB02/01-CloudAlbum-DDB/requirements.txt
 ```
 
 
@@ -483,16 +483,17 @@ conf = {
 
 Is it OK? Let's move to the next TASK.
 
-**NOTE:** Click the `stop icon` to stop your application.
-  * **Close your terminal** after application stop.
-  * **Close all your opened file tab.**
-<img src=./images/stop-app.png width=500>
-
 16. Delete data in the application for the next TASK.
 * File system will be changed from **local disk** to **Amazon S3**.
 * So, if you don't delete your album article which submitted this task, then **you will see your album article without images** when you run the application on the next TASK,
 
 <img src=images/lab02-task2-delete.png width=400>
+
+**NOTE:** Click the `stop icon` to stop your application.
+  * **Close your terminal** after application stop.
+  * **Close all your opened file tab.**
+<img src=./images/stop-app.png width=500>
+
 
 
 ## TASK 2. Go to S3
@@ -688,7 +689,18 @@ To begin, follow the steps below.
 47. In the left navigation menu, under **App integration**, click **App client settings**.
 
 48. For **Enabled Identity Providers**, check **Cognito User Pool**.
-* Check the Cloud9 ResourceId. 
+* Check the Cloud9 ResourceId. (in the cloud9 bash shell)
+* If you encounter below message, you should call "aws configure" and type "ap-southeast-1" in the Default region name
+```console
+You must specify a region. You can also configure your region by running "aws configure".
+
+aws configure
+AWS Access Key ID [None]: [blank. just enter]
+AWS Secret Access Key [None]: [blank. just enter]
+Default region name [None]: ap-southeast-1
+Default output format [None]: [blank. just enter]
+```
+
 ```console 
 RESOURCE_ID=$(aws ec2 describe-tags --query "Tags[].Value" --filters "Name=resource-id, Values=`ec2-metadata --instance-id | cut -f2 -d ' '`" "Name=key, Values=aws:cloud9:environment" --output text)
 
@@ -731,7 +743,7 @@ https://<CLOUD9_RESOURCE_ID>.vfs.cloud9.ap-southeast-1.amazonaws.com
 
 57. Install required Python packages:
 ```console
-sudo pip-3.6 install -r ~/environment/moving-to-serverless-techpump/LAB02/03-CloudAlbum-COGNITO/requirements.txt
+sudo pip-3.6 install -r ~/environment/moving-to-serverless-immersion-day/LAB02/03-CloudAlbum-COGNITO/requirements.txt
 ```
 
 58. Review 'LAB02/03.CloudAlbum-COGNITO/cloudalbum/config.py'
@@ -852,7 +864,7 @@ AWS [X-Ray](https://aws.amazon.com/xray/) helps developers analyze and debug pro
 
 64. Install required Python packages for AWS X-Ray.
 ```console
-sudo pip-3.6 install -r ~/environment/moving-to-serverless-techpump/LAB02/04-CloudAlbum-XRAY/requirements.txt
+sudo pip-3.6 install -r ~/environment/moving-to-serverless-immersion-day/LAB02/04-CloudAlbum-XRAY/requirements.txt
 ```
 
 **Download and run the AWS X-Ray daemon on your AWS Cloud9 instance.**
