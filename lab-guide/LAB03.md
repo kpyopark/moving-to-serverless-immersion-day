@@ -329,7 +329,7 @@ Creating lambda function: myapp-dev
 Creating Rest API
 Resources deployed:
   - Lambda ARN: arn:aws:lambda:ap-southeast-1:123456789012:function:myapp-dev
-  - Rest API URL: https://aavvueq9we.execute-api.ap-southeast-1.amazonaws.com/api/
+  - Rest API URL: https://<your_own_id>.execute-api.ap-southeast-1.amazonaws.com/api/
 ```  
 
 * You can get api URL easily using below command.
@@ -339,7 +339,7 @@ chalice url
 ```
 * output
 ```
-https://aavvueq9we.execute-api.ap-southeast-1.amazonaws.com/api/
+https://<your_own_id>.execute-api.ap-southeast-1.amazonaws.com/api/
 ```
 
 * **NOTE:** If you have following errors, you can check the **TASK 0. Permission grant for Cloud9** of **LAB 02 - Move to serverless**. 
@@ -371,7 +371,7 @@ chalice.deploy.deployer.ChaliceDeploymentError: ERROR - While deploying your cha
 
 * **Test #1**: `@app.route('/users/{name}', methods=['GET'])`
 ```console
-http https://aavvueq9we.execute-api.ap-southeast-1.amazonaws.com/api/users/David
+http https://<your_own_id>.execute-api.ap-southeast-1.amazonaws.com/api/users/David
 ```
 * output:
 ```
@@ -393,7 +393,7 @@ x-amzn-RequestId: 1b0ee142-9c8a-11e8-9f60-0d307c709c87
 
 * **TEST #2**: `@app.route('/users', methods=['POST'])`
 ```console
-echo '{"name": "David", "age": 22, "job": "student"}' | http https://aavvueq9we.execute-api.ap-southeast-1.amazonaws.com/api/users
+echo '{"name": "David", "age": 22, "job": "student"}' | http https://<your_own_id>.execute-api.ap-southeast-1.amazonaws.com/api/users
 ```
 * output:
 ```console
