@@ -65,6 +65,8 @@ aws ec2 describe-instances
 sudo pip-3.6 install boto3
 ```
 
+* Please, DO NOT Upgrade pip. pip-3.6 uses 9.0.3 version. If you want to upgrade pip-3.6, you should modify /usr/bin/pip-3.6 file with 18.1 version.
+
 11. At the terminal, type **python3** and press ENTER.
 
 12. For the confirmination, try the Python Boto 3 APIs by executing these commands:
