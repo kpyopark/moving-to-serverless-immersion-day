@@ -689,7 +689,18 @@ To begin, follow the steps below.
 47. In the left navigation menu, under **App integration**, click **App client settings**.
 
 48. For **Enabled Identity Providers**, check **Cognito User Pool**.
-* Check the Cloud9 ResourceId. 
+* Check the Cloud9 ResourceId. (in the cloud9 bash shell)
+* If you encounter below message, you should call "aws configure" and type "ap-southeast-1" in the Default region name
+```console
+You must specify a region. You can also configure your region by running "aws configure".
+
+aws configure
+AWS Access Key ID [None]: [blank. just enter]
+AWS Secret Access Key [None]: [blank. just enter]
+Default region name [None]: ap-southeast-1
+Default output format [None]: [blank. just enter]
+```
+
 ```console 
 RESOURCE_ID=$(aws ec2 describe-tags --query "Tags[].Value" --filters "Name=resource-id, Values=`ec2-metadata --instance-id | cut -f2 -d ' '`" "Name=key, Values=aws:cloud9:environment" --output text)
 
