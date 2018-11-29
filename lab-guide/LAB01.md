@@ -165,6 +165,9 @@ conf = {
 19. Select **moving-to-serverless-immersion-day/LAB01/CloudAlbum/run.py** in the tree view.
 
 20. First, **open the run.py**(double click), and on the top menu bar, click **Run → Run With → Python 3**. Ensure that you are using the **Python 3 runner**, as shown in the screenshot below.
+
+* You should open the "run.py" script file in IDE. Without opening this file, you would meet the exception messages.
+
 <img src=images/lab01-03.png width=800>
 
 21. You may fail due to following reason.
